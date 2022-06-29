@@ -1,4 +1,4 @@
-import { Button, Center, Text } from "@chakra-ui/react";
+import { Button, Center, Text, Heading, Stack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import appwrite from "utils";
@@ -30,10 +30,20 @@ export default function User() {
   return (
     loggedInUser && (
       <Center>
-        <Text>You logged-in successfully</Text>
-        <Button onClick={logOut} mt={20}>
-          Logout
-        </Button>
+        <Stack
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+          mt="150px"
+        >
+          <Heading>You logged-in successfully</Heading>
+
+          <Text>User: {loggedInUser.name}</Text>
+          <p>Email: {loggedInUser.email}</p>
+          <Button onClick={logOut} mt={20}>
+            Logout
+          </Button>
+        </Stack>
       </Center>
     )
   );

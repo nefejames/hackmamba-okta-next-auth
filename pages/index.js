@@ -7,7 +7,7 @@ export default function Home() {
     try {
       await appwrite.account.createOAuth2Session(
         "okta",
-        "http://localhost:3000/"
+        "http://localhost:3000/user"
       );
     } catch (error) {
       throw error;
@@ -18,7 +18,7 @@ export default function Home() {
       <Head>
         <title>Next Chakra UI Template</title>
       </Head>
-      <Button onClick={loginWithOkta} mt={20}>
+      <Button onClick={loginWithOkta} mt={60}>
         Login with Okta
       </Button>
     </Center>
